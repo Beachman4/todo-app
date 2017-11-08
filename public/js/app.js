@@ -13170,7 +13170,7 @@ module.exports = Cancel;
     storeToken: function storeToken(token) {
         var myDate = new Date();
         var days = 7;
-        var domain = 'todo.app';
+        var domain = 'todo.the9grounds.com';
         myDate.setTime(myDate.getTime() + days * 24 * 60 * 60 * 1000);
         __WEBPACK_IMPORTED_MODULE_0_cookies_js___default.a.set('userToken', token, {
             path: '/',

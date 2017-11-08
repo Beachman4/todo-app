@@ -8,7 +8,7 @@ export default {
     storeToken (token) {
         const myDate = new Date()
         const days = 7
-        const domain = 'todo.app'
+        const domain = 'todo.the9grounds.com'
         myDate.setTime(myDate.getTime() + (days * 24 * 60 * 60 * 1000))
         Cookie.set('userToken', token, {
             path: '/',
