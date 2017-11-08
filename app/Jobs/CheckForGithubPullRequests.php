@@ -85,6 +85,6 @@ class CheckForGithubPullRequests implements ShouldQueue
             }
         }
 
-        return $timezones;
+        return $array;
     }
 }

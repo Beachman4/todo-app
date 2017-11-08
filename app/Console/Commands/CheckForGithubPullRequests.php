@@ -90,6 +90,6 @@ class CheckForGithubPullRequests extends Command
             }
         }
 
-        return $timezones;
+        return $array;
     }
 }
