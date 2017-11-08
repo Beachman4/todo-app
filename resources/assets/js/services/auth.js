@@ -10,7 +10,7 @@ export default {
         const days = 7
         const domain = 'todo.the9grounds.com'
         myDate.setTime(myDate.getTime() + (days * 24 * 60 * 60 * 1000))
-        Cookie.set('userToken', token, {
+        Cookie.set('todoToken', token, {
             path: '/',
             domain: domain,
             expires: myDate,
@@ -18,7 +18,7 @@ export default {
         })
     },
     checkAuth () {
-        const userToken = Cookie.get('userToken')
+        const userToken = Cookie.get('todoToken')
         if (userToken && userToken !== '') {
             authApi.authenticate().then(data => {
                 auth.actions.loggedIn(store, data)

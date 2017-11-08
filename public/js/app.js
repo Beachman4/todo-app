@@ -12772,7 +12772,7 @@ var actions = {
 
         __WEBPACK_IMPORTED_MODULE_0__api_auth__["a" /* default */].logout().then(function (data) {
             commit('logOut');
-            __WEBPACK_IMPORTED_MODULE_3_cookies_js___default.a.expire('userToken');
+            __WEBPACK_IMPORTED_MODULE_3_cookies_js___default.a.expire('todoToken');
             // window.location.href = '/'
             __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/login');
         }).catch(function (data) {});
@@ -12848,7 +12848,7 @@ var actions = {
 
 
 
-var userToken = __WEBPACK_IMPORTED_MODULE_1_cookies_js___default.a.get("userToken");
+var userToken = __WEBPACK_IMPORTED_MODULE_1_cookies_js___default.a.get("todoToken");
 var instance = null;
 var token = document.head.querySelector('meta[name="csrf-token"]');
 if (userToken && userToken !== "") {
@@ -13172,7 +13172,7 @@ module.exports = Cancel;
         var days = 7;
         var domain = 'todo.the9grounds.com';
         myDate.setTime(myDate.getTime() + days * 24 * 60 * 60 * 1000);
-        __WEBPACK_IMPORTED_MODULE_0_cookies_js___default.a.set('userToken', token, {
+        __WEBPACK_IMPORTED_MODULE_0_cookies_js___default.a.set('todoToken', token, {
             path: '/',
             domain: domain,
             expires: myDate,
@@ -13180,7 +13180,7 @@ module.exports = Cancel;
         });
     },
     checkAuth: function checkAuth() {
-        var userToken = __WEBPACK_IMPORTED_MODULE_0_cookies_js___default.a.get('userToken');
+        var userToken = __WEBPACK_IMPORTED_MODULE_0_cookies_js___default.a.get('todoToken');
         if (userToken && userToken !== '') {
             __WEBPACK_IMPORTED_MODULE_1__api_auth__["a" /* default */].authenticate().then(function (data) {
                 __WEBPACK_IMPORTED_MODULE_3__store_modules_auth__["a" /* default */].actions.loggedIn(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */], data);
@@ -13272,8 +13272,8 @@ window.axios.defaults.headers.common = {
 };
 
 window.axios.defaults.baseURL = 'api';
-if (Cookie.get('userToken') && Cookie.get('userToken') != undefined) {
-  axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookie.get('userToken');
+if (Cookie.get('todoToken') && Cookie.get('todoToken') != undefined) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookie.get('todoToken');
 }
 
 window.Cookie = __webpack_require__(5);

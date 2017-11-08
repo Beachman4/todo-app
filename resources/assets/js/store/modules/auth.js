@@ -138,7 +138,7 @@ const actions = {
     logout: ( { commit }) => {
         auth.logout().then(data => {
             commit('logOut')
-            Cookie.expire('userToken')
+            Cookie.expire('todoToken')
             // window.location.href = '/'
             router.push('/login')
         }).catch(data => {

@@ -12,8 +12,8 @@ window.axios.defaults.headers.common = {
 };
 
 window.axios.defaults.baseURL = 'api'
-if (Cookie.get('userToken') && Cookie.get('userToken') != undefined) {
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookie.get('userToken');
+if (Cookie.get('todoToken') && Cookie.get('todoToken') != undefined) {
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookie.get('todoToken');
 }
 
 window.Cookie = require('cookies-js');

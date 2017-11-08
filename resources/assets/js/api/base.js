@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cookie from 'cookies-js'
 import router from '../router'
 
-const userToken = Cookie.get("userToken")
+const userToken = Cookie.get("todoToken")
 let instance = null
 let token = document.head.querySelector('meta[name="csrf-token"]');
 if (userToken && userToken !== "") {
