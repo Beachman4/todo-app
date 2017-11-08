@@ -31,7 +31,7 @@ class SendTodoEmails extends Mailable
     public function build()
     {
         $numOfItems = count($this->todoItems);
-        return $this->markdown('emails.todo.item')
-            ->subject("$numOfItems Todo Item" . $numOfItems == 1 ? '' : 's' . ' due today');
+        return $this->subject("$numOfItems Todo Item" . $numOfItems == 1 ? '' : 's' . ' due today')
+            ->markdown('emails.todo.item');
     }
 }

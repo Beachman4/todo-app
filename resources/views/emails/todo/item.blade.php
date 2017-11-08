@@ -2,7 +2,6 @@
 # Here are your todo items for today!
 
 @foreach($todoItems as $item)
-    
     {{ $item->title }}
 @endforeach
 
