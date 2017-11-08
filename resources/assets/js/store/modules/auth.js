@@ -123,6 +123,7 @@ const actions = {
             } else {
                 commit('registerSuccess', data)
                 authService.storeToken(data.token)
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;
                 router.push('/');
             }
         }).catch(error => {

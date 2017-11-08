@@ -12752,6 +12752,7 @@ var actions = {
             } else {
                 commit('registerSuccess', data);
                 __WEBPACK_IMPORTED_MODULE_1__services_auth__["a" /* default */].storeToken(data.token);
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;
                 __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/');
             }
         }).catch(function (error) {
