@@ -81,9 +81,8 @@ class CheckForGithubPullRequests implements ShouldQueue
         foreach ($timezones as $timezone) {
             $time = Carbon::now($timezone);
             if ($time->hour == 6) {
-
+                array_push($array, $timezone);
             }
-            array_push($array, $timezone);
         }
 
         return $timezones;

@@ -2,8 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\SendTodoEmails;
 use App\Services\Github;
+use App\Setting;
+use App\SettingMatch;
+use App\User;
 use Illuminate\Console\Command;
+use Carbon\Carbon;
 
 class CheckForGithubPullRequests extends Command
 {
@@ -81,9 +86,8 @@ class CheckForGithubPullRequests extends Command
         foreach ($timezones as $timezone) {
             $time = Carbon::now($timezone);
             if ($time->hour == 6) {
-
+                array_push($array, $timezone);
             }
-            array_push($array, $timezone);
         }
 
         return $timezones;
