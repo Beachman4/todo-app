@@ -22,9 +22,7 @@ Fourth,
     
 Next, fill out the information in .env
 
-
-
-To run the tests,
+# Testing
 
 First run:
 
