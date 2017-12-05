@@ -27,17 +27,15 @@ class LoginTest extends DuskTestCase
                     ->assertPathIs('/')
                     ->click('#navbarDropdownMenuLink')
                     ->pause(500)
-                    ->clickLink('Log Out');
+                    ->click('#logout');
         });
     }
 
     public function testFailedLogin()
     {
         $this->browse(function (Browser $browser) {
-            $browser->maximize()
-                ->visit('/')
-                ->pause(2000)
-                ->assertPathIs('/login')
+            $browser->visit('/')
+                ->pause(500)
                 ->type('email', 'test@test.com')
                 ->type('password', 'test123123')
                 ->press("Login")

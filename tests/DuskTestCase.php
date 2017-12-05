@@ -2,6 +2,9 @@
 
 namespace Tests;
 
+use App\User;
+use GuzzleHttp\Client;
+use Laravel\Dusk\Browser;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -39,5 +42,10 @@ abstract class DuskTestCase extends BaseTestCase
                 ChromeOptions::CAPABILITY, $options
             )
         );
+    }
+
+    public function loginUsing(Browser $browser, $user)
+    {
+        return $browser->visit("/_testing/login/$user");
     }
 }

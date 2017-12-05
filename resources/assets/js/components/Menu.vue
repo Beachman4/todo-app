@@ -20,7 +20,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <router-link class="dropdown-item" :to="{ name: 'Settings' }">Settings</router-link>
-                            <a class="dropdown-item" href="#" @click.prevent="logout">Log Out</a>
+                            <a class="dropdown-item" href="#" id="logout" @click.prevent="logout">Log Out</a>
 
                         </div>
                     </li>

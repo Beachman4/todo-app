@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         $user = $this->user();
 
-        return response()->json(compact('token', 'user'));
+        return response()->json(compact('token', 'user'))->cookie('todoToken', $token, 1000000, null, null, false, false);
     }
 
     public function register(Request $request)

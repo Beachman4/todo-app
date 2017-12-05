@@ -13,21 +13,21 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="title" class="form-control-label">Title</label>
-                            <input type="text" v-model="item.title" class="form-control" id="title" @input="updateData">
+                            <input type="text" name="title" v-model="item.title" class="form-control" id="title" @input="updateData">
                         </div>
                         <div class="form-group">
                             <label for="url" class="form-control-label">Url</label>
-                            <input type="text" v-model="item.url" class="form-control" id="url" @input="updateData">
+                            <input type="text" name="url" v-model="item.url" class="form-control" id="url" @input="updateData">
                         </div>
                         <div class="form-group">
                             <label for="description" class="form-control-label">Description</label>
-                            <input type="text" v-model="item.description" class="form-control" id="description" @input="updateData">
+                            <input type="text" name="description" v-model="item.description" class="form-control" id="description" @input="updateData">
                         </div>
                         <vue-datepicker-local v-model="item.date" :local="local" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="createItem">Create Item</button>
+                        <button type="button" class="btn btn-primary" id="createItemButton" data-dismiss="modal" @click="createItem">Create Item</button>
                     </div>
                 </div>
             </div>
