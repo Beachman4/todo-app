@@ -16,7 +16,7 @@ Second run,
     
 *This is for generating JWT Tokens for the front end*
 
-Fourth,
+Third,
     
     php artisan jwt:secret
     
